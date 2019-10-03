@@ -185,7 +185,7 @@ static void scatter_invalid_index(const char* op_name, int op_version) {
   test.Run(OpTester::ExpectResult::kExpectFailure, "indices element out of data bounds, idx=4 must be within the inclusive range [-4,3]");
 }
 
-TEST(Scatter, InvalidIndex) {
+TEST(Scatter, DISABLED_InvalidIndex) {
   scatter_invalid_index("Scatter", 9);
   scatter_invalid_index("ScatterElements", 11);
 }
