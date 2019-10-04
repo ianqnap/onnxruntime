@@ -23,7 +23,7 @@ for v2t in ${version2tag[*]}; do
     echo "deleting old onnx-${lastest_onnx_version}";
     python${PYTHON_VER} -m pip uninstall -y onnx
   fi
-  python${PYTHON_VER} -m pip install onnx=$onnx_version
+  python${PYTHON_VER} -m pip install onnx==$onnx_version
   mkdir -p /data/onnx/${onnx_tag}
   backend-test-tools generate-data -o /data/onnx/$onnx_tag
 done
