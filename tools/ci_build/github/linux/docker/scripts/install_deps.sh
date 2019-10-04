@@ -51,14 +51,13 @@ fi
 
 #install onnx
 export ONNX_ML=1
-INSTALLED_PYTHON_VERSION=$(python3 -c 'import sys; version=sys.version_info[:2]; print("{0}.{1}".format(*version));')
-if [ "$INSTALLED_PYTHON_VERSION" = "3.7" ];then
+if [ "$PYTHON_VER" = "3.7" ];then
   pip3 install --upgrade setuptools
 fi
-if [ "$INSTALLED_PYTHON_VERSION" = "3.4" ];then
+if [ "$PYTHON_VER" = "3.4" ];then
   echo "Python 3.5 and above is needed for running onnx tests!" 1>&2
 else  
-  source ${0/%install_deps\.sh/install_onnx\.sh} $INSTALLED_PYTHON_VERSION
+  source ${0/%install_deps\.sh/install_onnx\.sh} $PYTHON_VER
 fi
 
 #The last onnx version will be kept
