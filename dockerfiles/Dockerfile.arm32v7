@@ -1,6 +1,7 @@
 FROM balenalib/raspberrypi3-python:latest-stretch-build
 
-ARG ONNXRUNTIME_REPO=https://github.com/Microsoft/onnxruntime
+#ARG ONNXRUNTIME_REPO=https://github.com/Microsoft/onnxruntime
+ARG ONNXRUNTIME_REPO=https://github.com/ianqnap/onnxruntime
 ARG ONNXRUNTIME_SERVER_BRANCH=master
 
 #Enforces cross-compilation through Quemu
